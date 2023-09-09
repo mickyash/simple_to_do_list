@@ -1,5 +1,3 @@
-
-
 const addInput = document.querySelector('#addlist');
 const addbtn = document.querySelector('#submit');
 const ul = document.querySelector('ul');
@@ -52,10 +50,10 @@ addInput.addEventListener('keyup',(e)=>{
 
 
 
-
-function apenddelete(li) {//append the delete button to every list 
-    var deletebtn = document.createElement('button');
-    deletebtn.textContent = 'Delete'; 
+function apenddelete(li) {
+    
+    var deletebtn = document.createElement('i')
+    deletebtn.classList.add('fas', 'fa-trash-alt')
     li.appendChild(deletebtn);
     deletebtn.addEventListener('click' ,()=>{
         ul.removeChild(li);
@@ -88,8 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
             li.textContent = itemText;
             ul.appendChild(li);
             apenddelete(li);
+        
            
         });
         
     }
 });
+
